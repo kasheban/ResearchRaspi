@@ -20,7 +20,7 @@ Route::post('custom-login', [LoginController::class, 'customLogin'])->name('logi
 Route::get('registration', [LoginController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [LoginController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [LoginController::class, 'signOut'])->name('signout');
-Route::get('report', [DeviceController::class, 'report']); 
+Route::get('reports', [DeviceController::class, 'reports']); 
 
 Route::get('/', function () {
     return view('login');
