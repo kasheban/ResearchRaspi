@@ -12,6 +12,6 @@ class BandwidthController extends Controller
     {
    // $stats = Http::get('127.0.0.1:8080/wm/statistics/bandwidth/<switchId>/<portId>/json');
 
-    return view('bandwidth',['stats'=>$devices]);
+    return view('bandwidth',['stats'=>$stats]);
     }
 }

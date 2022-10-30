@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\BandwidthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +22,7 @@ Route::get('registration', [LoginController::class, 'registration'])->name('regi
 Route::post('custom-registration', [LoginController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [LoginController::class, 'signOut'])->name('signout');
 Route::get('/reports', [DeviceController::class, 'getDevices']); 
-Route::get('/banwidth', [BandwidthController::class, 'getStats']); 
+Route::get('/bandwidth', [BandwidthController::class, 'getStats']); 
 
 Route::get('/', function () {
     return view('login');
