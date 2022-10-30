@@ -25,7 +25,7 @@
                 <a class="links" href="#">Reports</a>
             </li>
             <li class="nav-item">
-                <a class="links" href="#">Logout</a>
+                <a class="links" href="{{ route('signout') }}">Logout</a>
             </li>
         </ul>
     </nav>

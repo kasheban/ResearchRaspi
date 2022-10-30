@@ -1,12 +1,14 @@
 @extends('NavBar')
 
 @section('content')
-<table>
+<table border='1'>
     @foreach ($devices as $data)
-    <li>
-        <ul>{{$data->mac}}</ul>
-        <ul>{{$data->ipv4}}<</ul>
-    </li>
+    <tr>
+        <td>{{$data['mac']}}</td>
+        <td>{{$data['ipv4']}}<</td>
+        <td>{{$data['ipv6']}}<</td>
+        <td>{{$data['lastseen']}}<</td>
+    </tr>
 @endforeach
 </table>
 @stop

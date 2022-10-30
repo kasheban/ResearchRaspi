@@ -12,6 +12,6 @@ class DeviceController extends Controller
     {
     $devices = Http::get('127.0.0.1:8080/wm/device');
 
-    return view('reports')->withDevices($devices);
+    return view('Reports',['devices'=>$devices]);
     }
 }

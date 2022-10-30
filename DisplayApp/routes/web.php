@@ -21,6 +21,7 @@ Route::get('registration', [LoginController::class, 'registration'])->name('regi
 Route::post('custom-registration', [LoginController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [LoginController::class, 'signOut'])->name('signout');
 Route::get('/reports', [DeviceController::class, 'getDevices']); 
+Route::get('/banwidth', [BandwidthController::class, 'getStats']); 
 
 Route::get('/', function () {
     return view('login');
