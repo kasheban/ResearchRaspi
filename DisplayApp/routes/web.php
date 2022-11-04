@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\BandwidthController;
+use App\Http\Controllers\HoneyPotController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +24,7 @@ Route::post('custom-registration', [LoginController::class, 'customRegistration'
 Route::get('signout', [LoginController::class, 'signOut'])->name('signout');
 Route::get('/reports', [DeviceController::class, 'getDevices']); 
 Route::get('/bandwidth', [BandwidthController::class, 'getStats']); 
+Route::get('/honeypot', [HoneyPotController::class, 'getDatas']); 
 
 Route::get('/', function () {
     return view('login');
@@ -36,9 +38,9 @@ Route::get('/nav', function () {
 //     return view('Reports');
 // });
 
-Route::get('/honeypot', function () {
-    return view('Honeypot');
-});
+//Route::get('/honeypot', function () {
+//    return view('Honeypot');
+//});
 
 Route::get('/cctv', function () {
     return view('cctv');
