@@ -4,10 +4,13 @@
 <table border='1'>
     @foreach ($devices as $data)
     <tr>
-        <td>{{$data['mac']}}</td>
-        <td>{{$data['ipv4']}}<</td>
-        <td>{{$data['ipv6']}}<</td>
-        <td>{{$data['lastseen']}}<</td>
+        <td>{{$data['mac']['0']}}</td>
+        @if($data['ipv4']==NULL)
+            <td></td>
+        @else    
+            <td>{{$data['ipv4']['0']}}<</td>
+        @endif
+        <td>{{$data['lastSeen']}}<</td>
     </tr>
 @endforeach
 </table>
