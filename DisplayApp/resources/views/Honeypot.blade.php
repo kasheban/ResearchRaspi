@@ -18,9 +18,8 @@
         <td>{{$data[2]}}</td>
         <td>{{$data[3]}}</td>
         <td>{{$data[4]}}</td>
-        <td>{{$data[5]}}</td>
+        <td>{{$data[5]}}</td>       
     </tr>
     @endforeach
 </table>
-
 @stop
