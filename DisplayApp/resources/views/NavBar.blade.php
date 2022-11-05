@@ -16,7 +16,7 @@
                 <a class="links" href="#">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="links" href="#">CCTV Monitor</a>
+                <a class="links" href="http://localhost:8090/" target="_blank">CCTV Monitor</a>
             </li>
             <li class="nav-item">
                 <a class="links" href="#">Honeypot</a>
