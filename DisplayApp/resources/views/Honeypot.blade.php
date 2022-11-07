@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <table border='1' class="styled-table" style="margin-left:12%">
+    <table border='1' class="styled-table" style="margin-left:25%">
         <thead>
             <tr>
                 <td>IP Address</td>
