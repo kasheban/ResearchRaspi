@@ -61,7 +61,7 @@
         @else
             <td>{{$data['ipv6'][0]}}</td>
         @endif
-        <td>{{$data['lastseen'][0]}}</td>
+        <td>{{$data['lastSeen']}}</td>
 
     </tr>
   </tbody>
