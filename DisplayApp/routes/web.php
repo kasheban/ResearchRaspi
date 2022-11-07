@@ -38,9 +38,9 @@ Route::get('/nav', function () {
 //     return view('Reports');
 // });
 
-//Route::get('/honeypot', function () {
-//    return view('Honeypot');
-//});
+// Route::get('/honeypot', function () {
+//     return view('Honeypot');
+// });
 
 Route::get('/cctv', function () {
     return view('cctv');

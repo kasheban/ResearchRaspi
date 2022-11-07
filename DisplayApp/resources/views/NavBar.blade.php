@@ -7,6 +7,41 @@
     <title>SecuRPi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/nav.css" type="text/css">
+    <style>
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 1.5em;
+            font-family: sans-serif;
+            min-width: 75%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: center;
+        }
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+            text-align: center;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+        .styled-table tbody tr.active-row {
+            font-weight: bold;
+            color: #009879;
+        }
+    </style>
 </head>
 <header>
     <nav class="navbar navbar-dark bg-primary">
@@ -19,10 +54,10 @@
                 <a class="links" href="http://localhost:8090/" target="_blank">CCTV Monitor</a>
             </li>
             <li class="nav-item">
-                <a class="links" href="#">Honeypot</a>
+                <a class="links" href="/honeypot">Honeypot</a>
             </li>
             <li class="nav-item">
-                <a class="links" href="#">Reports</a>
+                <a class="links" href="/reports">Reports</a>
             </li>
             <li class="nav-item">
                 <a class="links" href="{{ route('signout') }}">Logout</a>
