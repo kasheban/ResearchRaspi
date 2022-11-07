@@ -16,18 +16,22 @@ use App\Http\Controllers\HoneyPotController;
 |
 */
 
-Route::get('dashboard', [LoginController::class, 'dashboard']); 
+//  Route::get('dashboard', [LoginController::class, 'dashboard']); 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('custom-login', [LoginController::class, 'customLogin'])->name('login.custom'); 
 Route::get('registration', [LoginController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [LoginController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [LoginController::class, 'signOut'])->name('signout');
-Route::get('/reports', [DeviceController::class, 'getDevices']); 
+Route::get('/reports', [DeviceController::class, 'getDevices'])->name('reports'); 
+Route::post('/reports', [DeviceController::class, 'getDevices']); 
+Route::post('/dashboard', [BandwidthController::class, 'getStats']); 
+Route::get('/dashboard', [BandwidthController::class, 'viewData'])->name('dashboard'); 
+// Route::get('/reports', [DeviceController::class, 'getDevices']); 
 Route::get('/bandwidth', [BandwidthController::class, 'getStats']); 
 Route::get('/honeypot', [HoneyPotController::class, 'getDatas']); 
 
 Route::get('/', function () {
-    return view('login');
+    return view('/auth/login');
 });
 
 Route::get('/nav', function () {
@@ -42,13 +46,13 @@ Route::get('/nav', function () {
 //     return view('Honeypot');
 // });
 
-Route::get('/cctv', function () {
-    return view('cctv');
-});
+// Route::get('/cctv', function () {
+//     return view('cctv')->name('cctv');
+// });
 
-Route::get('/dashboard', function () {
-    return view('Dashboard');
-});
+// Route::get('/dashboard', function () {
+//     return view('Dashboard');
+// });
 
 // Route::get('/login', function () {
 //     return view('login');
