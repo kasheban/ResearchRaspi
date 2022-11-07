@@ -25,7 +25,7 @@ class BandwidthController extends Controller
 
     public function viewData(){
 
-        $titles = DB::table('logs')->pluck('BandwidthRx');
+        $titles = DB::table('logs')->pluck('bandwidth-rx');
         $data = collect([]);
         foreach ($titles as $title) {
             $data->push($title);
@@ -38,7 +38,7 @@ class BandwidthController extends Controller
         // foreach ($bandwidth as $bd){
         //     $data->push($bd['bandwidthRx']);
         // }
-        $tx = DB::table('logs')->pluck('BandwidthTx');
+        $tx = DB::table('logs')->pluck('bandwidth-tx');
         $datum = collect([]);
         foreach ($tx as $txs) {
             $datum->push($txs);
