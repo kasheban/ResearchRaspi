@@ -16,6 +16,7 @@
                 <a class="links" href="{{ route ('dashboard')}}">Dashboard</a>
             </li>
             <li class="nav-item">
+                <a class="links" href="http://localhost:8090/" target="_blank">CCTV Monitor</a>
                 <a class="links" href="/cctv">CCTV Monitor</a>
             </li>
             <li class="nav-item">

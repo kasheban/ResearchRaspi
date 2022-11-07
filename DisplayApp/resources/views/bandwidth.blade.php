@@ -10,6 +10,6 @@
         <td>{{$data['port']}}<</td>
         <td>{{$data['updated']}}<</td>
     </tr>
-@endforeach
+    @endforeach
 </table>
 @stop
