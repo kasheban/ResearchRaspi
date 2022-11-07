@@ -13,19 +13,19 @@
         <a class="navbar-brand" id="title" href="#">SecuRPi</a>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="links" href="#">Dashboard</a>
+                <a class="links" href="{{ route ('dashboard')}}">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="links" href="#">CCTV Monitor</a>
+                <a class="links" href="/cctv">CCTV Monitor</a>
             </li>
             <li class="nav-item">
-                <a class="links" href="#">Honeypot</a>
+                <a class="links" href="/honeypot">Honeypot</a>
             </li>
             <li class="nav-item">
-                <a class="links" href="#">Reports</a>
+                <a class="links" href="{{ route ('reports')}}">Reports</a>
             </li>
             <li class="nav-item">
-                <a class="links" href="{{ route('signout') }}">Logout</a>
+                <a class="links" href="{{ route ('signout') }}">Logout</a>
             </li>
         </ul>
     </nav>

@@ -15,17 +15,19 @@ use App\Http\Controllers\BandwidthController;
 |
 */
 
-Route::get('dashboard', [LoginController::class, 'dashboard']); 
+//  Route::get('dashboard', [LoginController::class, 'dashboard']); 
 Route::get('login', [LoginController::class, 'index'])->name('login');
 Route::post('custom-login', [LoginController::class, 'customLogin'])->name('login.custom'); 
 Route::get('registration', [LoginController::class, 'registration'])->name('register-user');
 Route::post('custom-registration', [LoginController::class, 'customRegistration'])->name('register.custom');
 Route::get('signout', [LoginController::class, 'signOut'])->name('signout');
-Route::get('/reports', [DeviceController::class, 'getDevices']); 
-Route::get('/bandwidth', [BandwidthController::class, 'getStats']); 
+Route::get('/reports', [DeviceController::class, 'getDevices'])->name('reports'); 
+Route::post('/reports', [DeviceController::class, 'getDevices']); 
+Route::post('/dashboard', [BandwidthController::class, 'getStats']); 
+Route::get('/dashboard', [BandwidthController::class, 'viewData'])->name('dashboard'); 
 
 Route::get('/', function () {
-    return view('login');
+    return view('/auth/login');
 });
 
 Route::get('/nav', function () {
@@ -37,16 +39,16 @@ Route::get('/nav', function () {
 // });
 
 Route::get('/honeypot', function () {
-    return view('Honeypot');
+    return view('Honeypot')->name('honeypot');
 });
 
-Route::get('/cctv', function () {
-    return view('cctv');
-});
+// Route::get('/cctv', function () {
+//     return view('cctv')->name('cctv');
+// });
 
-Route::get('/dashboard', function () {
-    return view('Dashboard');
-});
+// Route::get('/dashboard', function () {
+//     return view('Dashboard');
+// });
 
 // Route::get('/login', function () {
 //     return view('login');
