@@ -9,6 +9,7 @@ class HoneyPotController extends Controller
     //
     public function getDatas()
     {
+        if(Auth::check()){
         $file = fopen("/var/log/psad/top_attackers","r");
         $datas = array();
 
@@ -24,5 +25,8 @@ class HoneyPotController extends Controller
         array_pop($datas);
 
         return view('Honeypot',['datas'=>$datas]);
+        }else{
+            return redirect("login")->withSuccess('You are not allowed to access');
+        }
     }
 }

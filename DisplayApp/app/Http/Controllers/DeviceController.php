@@ -7,12 +7,19 @@ use App\Models\pc;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
+use Hash;
+use Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class DeviceController extends Controller
 {
     //
     public function getDevices()
-    {
+    {  
+        if(Auth::check()){
+        return view('dashboard');
+    
         $devices = Http::get('127.0.0.1:8080/wm/device/')->collect();
        
 
@@ -29,7 +36,9 @@ class DeviceController extends Controller
             }
         }
         return view('Reports',['devices'=>$devices]);
+        }else{
+             return redirect("login")->withSuccess('You are not allowed to access');
+        }
+
     }
-
 }
-

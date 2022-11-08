@@ -6,6 +6,10 @@ use App\Models\log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
+use Hash;
+use Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class BandwidthController extends Controller
 {
@@ -30,6 +34,7 @@ class BandwidthController extends Controller
 
     public function viewData(){
 
+        if(Auth::check()){
         $titles = DB::table('logs')->pluck('bandwidth_rx');
         $data = collect([]);
         foreach ($titles as $title) {
@@ -57,5 +62,8 @@ class BandwidthController extends Controller
         $charts->labels($date);
         $charts->dataset('Upload Speed', 'line', $datum);
         return view('Dashboard', compact('chart','charts'));
+         }else{
+        return redirect("login")->withSuccess('You are not allowed to access');
+        }
     }
 }

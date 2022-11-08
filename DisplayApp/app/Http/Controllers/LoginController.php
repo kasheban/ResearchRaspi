@@ -55,14 +55,14 @@ class LoginController extends Controller
         'password' => Hash::make($data['password'])
       ]);
     }    
-    public function dashboard()
-    {
-        if(Auth::check()){
-            return view('dashboard');
-        }
+    // public function dashboard()
+    // {
+    //     if(Auth::check()){
+    //         return view('dashboard');
+    //     }
   
-        return redirect("login")->withSuccess('You are not allowed to access');
-    }
+    //     return redirect("login")->withSuccess('You are not allowed to access');
+    // }
     
     public function signOut() {
         Session::flush();
