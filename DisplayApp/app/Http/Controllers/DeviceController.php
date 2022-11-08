@@ -18,7 +18,6 @@ class DeviceController extends Controller
     public function getDevices()
     {  
         if(Auth::check()){
-        return view('dashboard');
     
         $devices = Http::get('127.0.0.1:8080/wm/device/')->collect();
        

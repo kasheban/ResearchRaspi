@@ -28,6 +28,7 @@ Route::post('/dashboard', [BandwidthController::class, 'getStats']);
 Route::get('/dashboard', [BandwidthController::class, 'viewData'])->name('dashboard'); 
 // Route::get('/reports', [DeviceController::class, 'getDevices']); 
 Route::get('/honeypot', [HoneyPotController::class, 'getDatas']); 
+Route::get('/cctv', [cctv::class, 'show'])->name('cctv'); 
 
 Route::get('/', function () {
     return view('/auth/login');
