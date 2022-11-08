@@ -15,14 +15,18 @@ class DeviceController extends Controller
     {
         $devices = Http::get('127.0.0.1:8080/wm/device/')->collect();
        
-       
 
         
         foreach($devices as $device){
-     
-            $pc= pc::updateOrCreate(
-                ['mac'=>$device['mac'][0]],['ipv4'=>$device['ipv4'][0]]
-            );
+            if($device['ipv4']!=NULL){
+                $pc= pc::updateOrCreate(
+                    ['mac'=>$device['mac'][0]],['ipv4'=>$device['ipv4'][0]],
+                );
+            }else{
+                $pc= pc::updateOrCreate(
+                    ['mac'=>$device['mac'][0]],
+                );
+            }
         }
         return view('Reports',['devices'=>$devices]);
     }

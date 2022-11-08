@@ -13,13 +13,13 @@ class BandwidthController extends Controller
 
     public function getStats()
     {
-    $stats = Http::get('127.0.0.1:8080/wm/statistics/bandwidth/00:00:00:e0:4c:36:0e:5b/2/json')->collect();
+    $stats = Http::get('127.0.0.1:8080/wm/statistics/bandwidth/00:00:00:e0:4c:36:0e:44/1/json')->collect();
 
     $log = new log;
 
     $log->dpid=$stats[2]['dpid'];
-    $log->dpid=$stats[2]['bandwidth-rx'];
-    $log->dpid=$stats[2]['bandwidth-tx'];
+    $log->bandwidth_rx=$stats[2]['bits-per-second-rx'];
+    $log->bandwidth_tx=$stats[2]['bits-per-second-tx'];
     $log->save();
         
     if($log->save()){
@@ -30,7 +30,7 @@ class BandwidthController extends Controller
 
     public function viewData(){
 
-        $titles = DB::table('logs')->pluck('BandwidthRx');
+        $titles = DB::table('logs')->pluck('bandwidth_rx');
         $data = collect([]);
         foreach ($titles as $title) {
             $data->push($title);
@@ -43,7 +43,7 @@ class BandwidthController extends Controller
         // foreach ($bandwidth as $bd){
         //     $data->push($bd['bandwidthRx']);
         // }
-        $tx = DB::table('logs')->pluck('BandwidthTx');
+        $tx = DB::table('logs')->pluck('bandwidth_tx');
         $datum = collect([]);
         foreach ($tx as $txs) {
             $datum->push($txs);
