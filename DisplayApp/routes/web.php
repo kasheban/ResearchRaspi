@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\BandwidthController;
 use App\Http\Controllers\HoneyPotController;
+use App\Http\Controllers\cctv;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
