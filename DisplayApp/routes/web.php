@@ -25,7 +25,7 @@ Route::post('custom-registration', [LoginController::class, 'customRegistration'
 Route::get('signout', [LoginController::class, 'signOut'])->name('signout');
 Route::get('/reports', [DeviceController::class, 'getDevices'])->name('reports'); 
 Route::post('/reports', [DeviceController::class, 'getDevices']); 
-Route::post('/dashboard', [BandwidthController::class, 'getStats']); 
+Route::get('/dashboard', [BandwidthController::class, 'getStats']); 
 Route::get('/dashboard', [BandwidthController::class, 'viewData'])->name('dashboard'); 
 // Route::get('/reports', [DeviceController::class, 'getDevices']); 
 Route::get('/honeypot', [HoneyPotController::class, 'getDatas']); 
