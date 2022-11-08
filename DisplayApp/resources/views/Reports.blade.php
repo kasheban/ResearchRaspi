@@ -36,9 +36,10 @@
   </style>
 </head>
 <body>
-  <input type="text" class="center" id="myInput" onkeyup="myFunction()" placeholder="Search"  title="Search">
+  <input type="text" class="center" id="myInput" onkeyup="myFunction()" placeholder="Search Mac Address"  title="Search">
 
 <div class="container align-self-center my-auto center" >
+  <h1>Devices Table</h1>
 <table  class="table table-bordered " id="myTable">
    
   <thead class="head">
