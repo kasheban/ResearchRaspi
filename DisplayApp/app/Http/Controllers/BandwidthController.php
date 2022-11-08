@@ -21,6 +21,11 @@ class BandwidthController extends Controller
     $log->dpid=$stats[2]['bandwidth-rx'];
     $log->dpid=$stats[2]['bandwidth-tx'];
     $log->save();
+        
+    if($log->save()){
+        return response()->json(['status'=>1,'msg'=>'New Data has been added']);
+    }
+
     }
 
     public function viewData(){

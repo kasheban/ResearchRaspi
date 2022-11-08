@@ -27,7 +27,6 @@ Route::post('/reports', [DeviceController::class, 'getDevices']);
 Route::post('/dashboard', [BandwidthController::class, 'getStats']); 
 Route::get('/dashboard', [BandwidthController::class, 'viewData'])->name('dashboard'); 
 // Route::get('/reports', [DeviceController::class, 'getDevices']); 
-Route::get('/bandwidth', [BandwidthController::class, 'getStats']); 
 Route::get('/honeypot', [HoneyPotController::class, 'getDatas']); 
 
 Route::get('/', function () {
