@@ -15,22 +15,7 @@ class BandwidthController extends Controller
 {
     ///wm/statistics/bandwidth/<switchId>/<portId>/json
 
-    public function getStats()
-    {
-    $stats = Http::get('127.0.0.1:8080/wm/statistics/bandwidth/00:00:00:e0:4c:36:0e:44/1/json')->collect();
 
-    $log = new log;
-
-    $log->dpid=$stats[2]['dpid'];
-    $log->bandwidth_rx=$stats[2]['bits-per-second-rx'];
-    $log->bandwidth_tx=$stats[2]['bits-per-second-tx'];
-    $log->save();
-        
-    if($log->save()){
-        return response()->json(['status'=>1,'msg'=>'New Data has been added']);
-    }
-
-    }
 
     public function viewData(){
 
@@ -44,9 +29,7 @@ class BandwidthController extends Controller
             $log->bandwidth_tx=$stats[2]['bits-per-second-tx'];
             $log->save();
                 
-            if($log->save()){
-                return response()->json(['status'=>1,'msg'=>'New Data has been added']);
-            }
+
         $titles = DB::table('logs')->pluck('bandwidth_rx');
         $data = collect([]);
         foreach ($titles as $title) {
